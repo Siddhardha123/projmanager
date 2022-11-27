@@ -1,8 +1,8 @@
 # projmanager
 
-#techstack
+## techstack
 
-frontend - react,apollo-graphql, bootstrap 
-backend - nodejs ,express, graphql 
-database - mongoDB
+ ### frontend - react,apollo-graphql, bootstrap 
+ ### backend - nodejs ,express, graphql 
+ ### database - mongoDB
 
