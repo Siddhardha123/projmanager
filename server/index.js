@@ -3,6 +3,7 @@ require('dotenv').config();
 const {graphqlHTTP} = require(
     'express-graphql'
 )
+const path = require('path');
 const cors = require('cors');
 const connectDB = require('./config/db.js')
 const schema = require('./schema/schema.js')
@@ -18,6 +19,12 @@ app.use(
         graphiql : process.env.NODE_ENV == "dev",
     })
 )
+app.use(express.static('public'));
+app.get(
+    '*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    }
+);
 app.listen(port,()=>{
     console.log(`app started on port ${port}`)
 })
