@@ -19,10 +19,10 @@ app.use(
         graphiql : process.env.NODE_ENV == "dev",
     })
 )
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, './client/build')));
 app.get(
     '*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+        res.sendFile(path.join(__dirname, './client/build/index.html'));
     }
 );
 app.listen(port,()=>{
